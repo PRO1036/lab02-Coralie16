@@ -52,32 +52,54 @@ ggplot (plastic_waste, aes(x=plastic_waste_per_cap)) +
 ### Exercise 2
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap, fill = continent)) +
+  geom_density(alpha =0.4) 
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
+
+La couleur (colour and fill) est réglé dans l’ aes dû au fait que l’on
+associe différentes couleurs à différentes données. On est entrain de
+faire du mapping.
+
+La transparence est réglé le geom_density, car la transparence est réglé
+indépendemment des données. On est entrain de faire du setting.
 
 ### Exercise 3
 
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= continent, y= plastic_waste_per_cap)) +
+  geom_boxplot() +
+  labs (x="continent", y="plastic_waste_per_cap")
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= continent, y= plastic_waste_per_cap)) +
+  geom_violin() +
+  labs (x="continent", y="plastic_waste_per_cap")
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+Le graphique à violin permet de visualiser la quantité de personne qui
+ont une certaine valeur de “plastic_waste_per_cap”. En effet, les
+espaces plus larges repésentent un nombre d’individus élevé, alors que
+les parties amincies représentent un nombre d’individus plus faible.
 
 ### Exercise 4
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= plastic_waste_per_cap,y=mismanaged_plastic_waste_per_cap,colour = continent)) +
+  geom_point()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
 
 Réponse à la question…
 
