@@ -95,23 +95,34 @@ les parties amincies représentent un nombre d’individus plus faible.
 ### Exercise 4
 
 ``` r
-ggplot(plastic_waste, aes(x= plastic_waste_per_cap,y=mismanaged_plastic_waste_per_cap,colour = continent)) +
+ggplot(plastic_waste, aes(x=mismanaged_plastic_waste_per_cap ,y=plastic_waste_per_cap,colour = continent)) +
   geom_point()
 ```
 
 ![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
 
-Réponse à la question…
+Il est possible d’observer que plus la quantité de déchets par habitant
+augmente, plus la quantité de déchets non-gérés par habitant augmente
+aussi. Nous avons donc une relation positive entre ces deux variables.
 
 ### Exercise 5
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= total_pop, y= plastic_waste_per_cap)) +
+  geom_point()
 ```
 
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-total-1.png)<!-- -->
+
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= coastal_pop, y= plastic_waste_per_cap)) +
+  geom_point()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
 
 Réponse à la question…
 
@@ -120,5 +131,17 @@ Réponse à la question…
 Recréez la visualisation:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x= coastal_pop/total_pop, y= plastic_waste_per_cap, colour = continent)) +
+  geom_point() +
+  geom_smooth()
 ```
+
+    ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+
+    ## Warning: Removed 10 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->

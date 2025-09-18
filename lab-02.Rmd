@@ -72,22 +72,24 @@ Le graphique à violin permet de visualiser la quantité de personne qui ont une
 
 
 ```{r plastic-waste-mismanaged}
-ggplot(plastic_waste, aes(x= plastic_waste_per_cap,y=mismanaged_plastic_waste_per_cap,colour = continent)) +
+ggplot(plastic_waste, aes(x=mismanaged_plastic_waste_per_cap ,y=plastic_waste_per_cap,colour = continent)) +
   geom_point()
 
 ```
 
-Réponse à la question...
+Il est possible d'observer que plus la quantité de déchets par habitant augmente, plus la quantité de déchets non-gérés par habitant augmente aussi. Nous avons donc une relation positive entre ces deux variables.  
 
 ### Exercise 5
 
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(plastic_waste, aes(x= total_pop, y= plastic_waste_per_cap)) +
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(plastic_waste, aes(x= coastal_pop, y= plastic_waste_per_cap)) +
+  geom_point()
 ```
 
 Réponse à la question...
@@ -97,5 +99,8 @@ Réponse à la question...
 Recréez la visualisation:
 
 ```{r recreate-viz}
-# insert code here
+ggplot(plastic_waste, aes(x= coastal_pop/total_pop, y= plastic_waste_per_cap, colour = continent)) +
+  geom_point() +
+  geom_smooth()
+
 ```
