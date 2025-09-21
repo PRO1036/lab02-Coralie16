@@ -58,12 +58,12 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap, fill = continent)) +
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
-La couleur (colour and fill) est réglé dans l’ aes dû au fait que l’on
+La couleur (colour and fill) est réglée dans l’ aes dû au fait que l’on
 associe différentes couleurs à différentes données. On est entrain de
 faire du mapping.
 
 La transparence est réglée dans le geom_density, car la transparence est
-réglée indépendemment des données. On est entrain de faire du setting.
+réglée indépendamment des données. On est entrain de faire du setting.
 
 ### Exercise 3
 
@@ -130,11 +130,12 @@ coastal_pop”, les données se situent tous entre 0 et environ 2,80e+08.
 
 À l’oeil nu, on dirait que les points sur le deuxième graphique sont
 plus dispersés. Cependant, en regardant les valeurs sur l’axe des X, il
-est possible de voir que c’est en fait le premier graphique qui présente
-une plus grande dispersion des données.
+est possible d’affirmer que c’est en fait le premier graphique qui
+présente une plus grande dispersion des données.
 
 Nous pouvons donc conclure que le deuxième graphique,
-“plastic_waste_per_cap vs coastal_pop”, a une relation plus forte.
+“plastic_waste_per_cap vs coastal_pop”, a une relation plus forte entre
+ses variables.
 
 ## Conclusion
 
